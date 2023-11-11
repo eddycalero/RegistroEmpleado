@@ -9,6 +9,7 @@ public class User {
     private String Direccion; 
     private String Profesion;
     private String Area_laboral;
+    private boolean IsActive;
     
     public User(){
         Nombre = "nn";
@@ -18,9 +19,10 @@ public class User {
         Direccion = "nn";
         Profesion = "nn";
         Area_laboral = "nn";
+        IsActive = true;
     }
 
-    public User(String Edad, String Nombre, String Contacto, String Cedula, String Direccion, String Profesion, String Area_laboral) {
+    public User(String Nombre, String Edad, String Contacto, String Cedula , String Direccion, String Profesion, String Area_laboral,boolean IsActive) {
         this.Edad = Edad;
         this.Nombre = Nombre;
         this.Contacto = Contacto;
@@ -28,7 +30,7 @@ public class User {
         this.Direccion = Direccion;
         this.Profesion = Profesion;
         this.Area_laboral = Area_laboral;
-
+        this.IsActive = IsActive;
     }
 
     public String getCedula() {
@@ -37,6 +39,14 @@ public class User {
 
     public void setCedula(String Cedula) {
         this.Cedula = Cedula;
+    }
+
+     public boolean getIsActive() {
+        return IsActive;
+    }
+
+     public void setIsActive(boolean IsActive) {
+        this.IsActive = IsActive;
     }
 
     public void setEdad(String Edad) {
@@ -63,6 +73,15 @@ public class User {
         return Direccion;
     }
 
+       public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String ID) {
+        this.Nombre = ID;
+    }
+    
+
     public void setProfesion(String Profesion) {
         this.Profesion = Profesion;
     }
@@ -79,17 +98,11 @@ public class User {
         return Area_laboral;
     }
 
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String ID) {
-        this.Nombre = ID;
-    }
-    
+ 
     @Override
     public String toString(){
-        return "\nNombre" + Nombre + "\nEdad" + Edad  + "\nContacto" + Contacto  + "\nCedula" + Cedula  + "\nProfesion" + Profesion  + "\nArea_Laboral" + Area_laboral  + "\nDireccion" + Direccion;
+        return "\nNombre" + Nombre + "\nCedula" + Cedula + "\nEdad" + Edad  + "\nProfesion" + Profesion + "\nArea_Laboral" + Area_laboral  + "\nContacto" + Contacto  + "\nDireccion" + Direccion +
+         "\nIsActive" + IsActive ;
     }
     public int getTamano(){
         return getNombre().length()*2+2+4+1;
